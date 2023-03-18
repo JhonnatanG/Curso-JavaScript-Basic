@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        :root {
+            --very-light-pink: #c7c7c7;
+            --text-input-field: #f7f7f7;
+            --hospital-green: #ACD9B2;
+            --white: #FFFFFF;
+            --black: #000000;
+            /*se crean varibles para tener tamaños de letra ya especificados para su uso general*/
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .product-detail {
+            width: 360px;
+            padding-bottom: 24px;
+            position: absolute;
+            right: 0;
+        }
+
+        .product-detail-close {
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--white);
+            padding: 4px;
+            border-radius: 50%;
+            
+        }
+
+        .product-detail-close:hover {
+            cursor: pointer;
+        }
+
+        .product-detail > img:nth-child(2) {
+            width: 100%;
+            height: 360%;
+            object-fit: cover;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .primary-button {
+            background: var(--hospital-green);
+            border: none;
+            border-radius: 8px;
+            color: var(--white);
+            width: 100%;
+            cursor: pointer;/*para que al poner el cursor sobre el boton cambie el cursor a una mano*/
+            font-size: var(--md);
+            font-weight: bold;/*para poner grosor al texto en este caso esta en negrita*/
+            height: 50px;
+        }
+
+        .primary-botton img {
+            margin-right: 10px;
+        }
+
+        .add-to-cart-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-info {
+            margin: 24px 24px 0px 24px;
+        }
+
+        .product-info p:nth-child(1) {
+          font-size: var(--md); 
+          font-weight: bold; 
+          margin-top: 0;
+          margin-bottom: 4px;
+        }
+
+        .product-info p:nth-child(2) {
+          font-size: var(--md); 
+          color: var(--very-light-pink);
+          margin-bottom: 36px;
+          margin-top: 0;
+        }
+
+        .product-info p:nth-child(3) {
+          font-size: var(--sm); 
+          color: var(--very-light-pink);
+          margin-bottom: 36px;
+          margin-top: 0;
+        }
+
+        @media (max-width: 640px){
+            .product-detail {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <aside class="product-detail">
+        <div class="product-detail-close">
+            <img src="./assets/icons/icon_close.png" alt="close">
+        </div>
+        <img src="./assets/minirefri.png" alt="bike">
+        <div class="product-info">
+            <p>$35.00</p>
+            <p>Retro refrigerator</p>
+            <p>The Frigidaire 3.2 cuff. retro design refrigerator has enough room to store your favorite foods and drinks, while not taking up a lot of space. The convenient door basket on the reversible door is large enough for two-liter bottles and canned drinks. This low energy consumption refrigerator is perfect for the office or extra rooms away from the kitchen with its space-saving flush-back design.</p>
+            <button class="primary-button add-to-cart-button">
+                <img src="./assets/icons/bt_add_to_cart.svg" alt="add">Add to cart
+            </button>
+        </div>
+    </aside>
+</body>
+</html>
