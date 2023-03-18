@@ -3,11 +3,11 @@ const desktopMenu = document.querySelector('.desktop-menu');
 const menuHamIcon = document.querySelector('.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 const menuCartIcon = document.querySelector('.navbar-shoping-cart');
-const asideShoppingCart = document.querySelector('.product-detail');
+const asideShoppingCart = document.querySelector('#shoppingCartContainer');
 const cardContainer = document.querySelector('.card-container');
 
 
-FlechamenuDesktop.addEventListener('click', showDesktopMenu);
+flechaMenuDesktop.addEventListener('click', showDesktopMenu);
 menuHamIcon.addEventListener('click', toggleMobileMenu);
 menuCartIcon.addEventListener('click', toggleCartAside)
 
@@ -46,20 +46,6 @@ function toggleCartAside (){
 
     asideShoppingCart.classList.toggle('inactive');  
 }
-
-/*
-<div class="product-card">
-    <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
-    <div class="product-info">
-        <div>
-            <p>$120,00</p>
-            <p>Bike</p>    
-        </div>
-        <figure>
-            <img src="./assets/icons/bt_add_to_cart.svg" alt="carrito">
-        </figure>
-    </div>
-</div> */
 
 //se crea un array que contendra todas las cards
 const productList = [];
