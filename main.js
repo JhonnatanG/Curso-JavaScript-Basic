@@ -1,4 +1,4 @@
-const FlechamenuDesktop = document.querySelector('.flecha-abajo');
+const flechaMenuDesktop = document.querySelector('.flecha-abajo');
 const desktopMenu = document.querySelector('.desktop-menu');
 const menuHamIcon = document.querySelector('.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
