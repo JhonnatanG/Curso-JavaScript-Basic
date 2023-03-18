@@ -1,0 +1,169 @@
+:root {
+    --very-light-pink: #c7c7c7;
+    --text-input-field: #f7f7f7;
+    --hospital-green: #ACD9B2;
+    --white: #FFFFFF;
+    --black: #000000;
+    /*se crean varibles para tener tamaños de letra ya especificados para su uso general*/
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* clase para desactivar ventanas, para despues manipularlas con JS */
+.inactive {
+    display: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+    border-bottom: 1px solid var(--very-light-pink);
+}
+
+.menu {
+    display: none;
+}
+
+.logo {
+    width: 100px;
+}
+
+.navbar-left ul,
+.navbar-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}   
+
+.navbar-left {
+    display: flex;
+}
+
+.navbar-left ul {
+    margin-left: 24px;
+}
+
+.navbar-left ul li a,
+.navbar-right ul li a {
+    text-decoration: none;
+    color: var(--very-light-pink);
+    border: 1px solid var(--white);
+    border-radius: 8px;
+    padding: 6px;
+}
+
+.navbar-left ul li a:hover,
+.navbar-right ul li a:hover {
+    border: 1px solid var(--hospital-green);
+    color: var(--hospital-green);
+}
+
+.navbar-email{
+    color: var(--very-light-pink);
+    font-size: var(--sm);
+    margin-right: 8px;
+}
+
+
+
+.navbar-right ul li:nth-child(2) {
+    margin-right: 24px;
+}
+
+.navbar-right ul .flecha-abajo {
+    transform: rotate(90deg);
+    width: 4px;
+    height: 9px;
+    cursor: pointer;
+}
+
+.navbar-shoping-cart {
+    position: relative;
+}
+
+.navbar-shoping-cart div {
+    width: 10px;
+    height: 10px;
+    background-color: var(--hospital-green);
+    border-radius: 50%;
+    font-size: 8px;
+    font-weight: bold;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desktop-menu {
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    background: var(--white);
+    width: 100px;
+    height: auto;
+    border: 1px solid var(--very-light-pink);
+    border-radius: 8px;
+    padding: 20px 20px 0px 20px;
+}
+
+.desktop-menu ul {
+    list-style: none;/*se usa para quitar los puntos al inicio de las listas*/
+    padding: 0;
+    margin: 0;
+}
+
+.desktop-menu ul li {
+    text-align: end;
+}
+
+.desktop-menu ul li:nth-child(1), 
+.desktop-menu ul li:nth-child(2) {
+    font-weight: bold;
+}
+
+.desktop-menu ul li:last-child {
+    padding-top: 20px;
+    border-top: 1px solid var(--very-light-pink);
+}
+
+.desktop-menu ul li:last-child a {
+    color: var(--hospital-green);
+    font-size: var(--sm);
+}
+
+.desktop-menu ul li a {
+    color: var(--black);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+    .menu {
+        display: block;
+    }
+
+    .navbar-left ul {
+        display: none;
+    }
+
+    .navbar-email{
+      display: none;
+    }
+
+    .flecha-abajo {
+        display: none;
+    }
+}
