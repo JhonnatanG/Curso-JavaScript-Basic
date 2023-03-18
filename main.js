@@ -5,18 +5,23 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const menuCartIcon = document.querySelector('.navbar-shoping-cart');
 const asideShoppingCart = document.querySelector('#shoppingCartContainer');
 const cardContainer = document.querySelector('.card-container');
+const detailContainer = document.querySelector('#productDetail');
+const closeDetailContainer = document.querySelector('.product-detail-close');
 
 
 flechaMenuDesktop.addEventListener('click', showDesktopMenu);
 menuHamIcon.addEventListener('click', toggleMobileMenu);
-menuCartIcon.addEventListener('click', toggleCartAside)
+menuCartIcon.addEventListener('click', toggleCartAside);
+closeDetailContainer.addEventListener('click', closeProductDetailAside);
 
 
 function showDesktopMenu () {
     const isAsideClosed = asideShoppingCart.classList.contains('inactive');
+    const isDetailContainerClosed = detailContainer.classList.contains('inactive');
 
-    if(!isAsideClosed){
+    if(!isAsideClosed || !isDetailContainerClosed){
         asideShoppingCart.classList.add('inactive');
+        detailContainer.classList.add('inactive');
     }
     //con este codigo se quita o pone la clase con clik inactive del desktop-menu, que esta guardado en la variable desktopMenu
     desktopMenu.classList.toggle('inactive');
@@ -24,9 +29,11 @@ function showDesktopMenu () {
 
 function toggleMobileMenu() {
     const isAsideClosed = asideShoppingCart.classList.contains('inactive');
+    const isDetailContainerClosed = detailContainer.classList.contains('inactive');
 
-    if(!isAsideClosed){
+    if(!isAsideClosed || !isDetailContainerClosed){
         asideShoppingCart.classList.add('inactive');
+        detailContainer.classList.add('inactive');
     }
 
     mobileMenu.classList.toggle('inactive');
@@ -36,15 +43,28 @@ function toggleCartAside (){
     //classList.contains se usa para verificar si tiene la clase enviada como argumento, devolviento true o false
     const isMobilMenuClosed = mobileMenu.classList.contains('inactive');
     const isDesktopClosed = desktopMenu.classList.contains('inactive');
+    const isDetailContainerClosed = detailContainer.classList.contains('inactive');
 
-    if(!isMobilMenuClosed){
+    if(!isMobilMenuClosed ||!isDesktopClosed || !isDetailContainerClosed){
         mobileMenu.classList.add('inactive');
-    }
-    if(!isDesktopClosed){
         desktopMenu.classList.add('inactive');
+        detailContainer.classList.add('inactive');
     }
 
     asideShoppingCart.classList.toggle('inactive');  
+}
+
+function openProductDetailAside(){
+    asideShoppingCart.classList.add('inactive');
+    mobileMenu.classList.add('inactive');
+    desktopMenu.classList.add('inactive');
+
+    detailContainer.classList.remove('inactive');
+    
+}
+
+function closeProductDetailAside(){
+    detailContainer.classList.add('inactive');
 }
 
 //se crea un array que contendra todas las cards
@@ -81,9 +101,11 @@ function cardList(arr){
         const productCard = document.createElement('div');
         //se le agrega al div la clase product-card con la funcion .classList.add()
         productCard.classList.add('product-card');
+
         const cardImg = document.createElement('img');
         //se agrega el src con la imgen que tenga el objeto producList, se agrega el atributo src con .setAtribute y se pasa dos parametros el nombre del atributo y el valor de este
         cardImg.setAttribute('src', product.image);
+        cardImg.addEventListener('click', openProductDetailAside);
 
         /**contenedor <div clas=product-info> */
         const productInfo = document.createElement('div');
